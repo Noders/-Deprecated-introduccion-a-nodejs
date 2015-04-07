@@ -1,9 +1,10 @@
-var http = require('http'); //Asi se requieren "librerias" o "modulos"
+var http = require('http');
 
 http.createServer(function(request, response) {
-    response.writeHead(200); //codigo de estado en el header
-    response.write("Hola mundo!   "); //el "body" de la respuesta
-    response.end(); // cerrar la conexion
-}).listen(3000); //escuchar conexiones en el puerto 3000 
+    response.writeHead(200);
+    response.write("Hola chicos!   ");
+    response.end();
+}).listen(3000);
 
 console.log("Aqui, escuchando el puerto 3000...");
+
