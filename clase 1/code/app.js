@@ -1,10 +1,10 @@
-var http = require('http');
+var http = require('http'); //importacion de modulos de npm
 
 http.createServer(function(request, response) {
-    response.writeHead(200);
-    response.write("Hola chicos!   ");
+    response.writeHead(200); // all good :)
+    response.write("Hola noders!   ");
     response.end();
-}).listen(3000);
+}).listen(3007);
 
-console.log("Aqui, escuchando el puerto 3000...");
+console.log("Aqui, escuchando el puerto 3007...");
 
