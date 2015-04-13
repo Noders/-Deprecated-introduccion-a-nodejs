@@ -1,0 +1,21 @@
+unirest
+
+unirest.get("https://byroredux-metacritic.p.mashape.com/game-list/pc/coming-soon")
+        .header("X-Mashape-Key", "mgJXDeuxhUmshog39jEw2pJSRkQDp1vNOBWjsnzDkSjYxIxnvl")
+        .header("Accept", "application/json")
+        .end(function(result) {
+        	console.log(result.body.results)
+            res.render('game', {
+		        title: 'Express',
+		        juegos:result.body.results
+		    });
+        });
+                
+  each juego in juegos
+    div.juego
+      h2 #{juego.name}
+      p score: #{juego.score}
+      p
+        a(href="#{juego.url}") link
+      hr
+      br
