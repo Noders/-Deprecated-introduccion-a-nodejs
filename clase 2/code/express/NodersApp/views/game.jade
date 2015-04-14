@@ -1,10 +1,9 @@
 extends layout
 
 block content
-	
   each juego in juegos
     div.juego
-      h2 #{juego.name} 
+      h2 #{juego.name}
       p score: #{juego.score}
       p
         a(href="#{juego.url}") link

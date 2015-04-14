@@ -1,5 +1,5 @@
 {
-  "name": "NodersApp",
+  "name": "nodersapp",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -13,6 +13,6 @@
     "jade": "~1.9.2",
     "morgan": "~1.5.1",
     "serve-favicon": "~2.2.0",
-    "unirest":"*"
+    "unirest": "^0.4.0"
   }
 }
