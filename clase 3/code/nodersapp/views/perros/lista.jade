@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  each perro in perros
+    .perros
+      div.perro
+        h2 #{perro.nombre}
+        p
+          a(href="/perros/#{perro._id}") Ver Perro
+        hr
+        br

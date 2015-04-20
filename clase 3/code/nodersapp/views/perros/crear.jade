@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  .perros
+    div.perro
+      form(method="POST")
+        h1 Como se llama tu perro:
+        input(type="text" name="nombre")
+        p
+        button(type="submit") Crea un perro!
+        hr
+        br
