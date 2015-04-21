@@ -1,0 +1,98 @@
+
+
+
+router.get('/crearperroalamala', function(req, res, next) {
+    var unPerro = Perro({
+        nombre: "cachupin: " + Date.now()
+    });
+    unPerro.save(function(err, elPerro) {
+        if (err)
+            console.log(err);
+        else
+            console.log(elPerro);
+        res.send('Perro Creado :)');
+    });
+});
+
+
+
+
+
+res.render('perros/lista', {
+  title: 'Mis Perros',
+  perros: perros
+});
+
+
+
+/* GET un perro. */
+router.get('/:id', function(req, res, next) {
+    Perro.findById(req.params.id,function(err, perro) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log(perro);
+            res.render('perros/unosolo', {
+                title: 'Mi Perro',
+                perro: perro
+            });
+        }
+    });
+});
+
+
+
+/* DELETE un perro. */
+router.get('/:id/borrar', function(req, res, next) {
+    Perro.findById(req.params.id,function(err, perro) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log(perro);
+            res.render('perros/unosolo', {
+                title: 'Mi Perro',
+                perro: perro
+            });
+        }
+    });
+});
+
+
+block content
+  if perros.length > 0 
+    each perro in perros
+      .perros
+        div.perro
+          h2 #{perro.nombre}
+          p
+            a(href="/perros/#{perro._id}") Ver Perro
+          hr
+          br
+  else
+    h1 No hay perros!
+
+
+
+
+/* Formulario para Crear Perros. */
+router.get('/crear', function(req, res, next) {
+    res.render('perros/crear', {
+        title: 'Creando un Perro'
+    });
+});
+
+/* POST para Crear Perros. */
+router.post('/crear', function(req, res, next) {
+    var unPerro = Perro({
+        nombre: req.body.nombre
+    });
+    unPerro.save(function(err, elPerro) {
+        if (err){
+            console.log(err);
+        res.send("Hay un error")
+        }
+        else{
+          res.redirect("/perros");
+        }
+    });
+});
