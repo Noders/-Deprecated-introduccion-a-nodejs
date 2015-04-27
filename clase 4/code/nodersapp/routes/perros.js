@@ -6,7 +6,12 @@ var Perro = mongoose.model('Perro', {
     nombre: String
 });
 
-
+router.use(function(req,res,next){
+    if(!req.user){
+        res.redirect('/')
+    }
+    next();
+})
 
 /* GET lista de Perros. */
 router.get('/', function(req, res, next) {

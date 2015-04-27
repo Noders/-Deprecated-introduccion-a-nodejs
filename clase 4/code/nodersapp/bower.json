@@ -1,0 +1,13 @@
+{
+  "name": "nodersapp",
+  "version": "0.0.1",
+  "homepage": "https://github.com/forres/introduccion-a-nodejs",
+  "authors": [
+    "fforres <felipe.torressepulveda@gmail.com>"
+  ],
+  "description": "noders app for IF courses",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "~3.3.4"
+  }
+}
