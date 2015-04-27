@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  .perros
+    if perros.length > 0
+      each mascota in perros
+        div.perro
+          h2 #{mascota.nombre}
+          p
+            a(href="/perros/#{mascota._id}") Ver Perro
+          hr
+          br
+    else
+      h1 Noooooo!!! :(
+
+    
