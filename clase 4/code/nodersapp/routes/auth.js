@@ -1,32 +1,54 @@
 var passport = require('passport');
+
 var Cuenta = require('../models/cuenta');
+
 var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
+
+
 router.route('/registrar')
-    .get(function(req, res, next) {
-        res.render('user/registrar', {
-            title: 'Registrando un usuario'
-        });
-    })
-    .post(function(req, res, next) {
-        console.log(req.body)
-        Cuenta.register(new Cuenta({
-            username: req.body.username
-        }), req.body.password, function(err, account) {
+
+
+
+
+.get(function(req, res, next) {
+    res.render('user/registrar', {
+        title: 'Registrando un usuario'
+    });
+})
+
+
+
+
+
+
+.post(function(req, res, next) {
+
+    var UnaNuevaCUenta = new Cuenta({
+        username: req.body.username
+    });
+
+
+    Cuenta.register(UnaNuevaCUenta, req.body.password,
+        function(err, account) {
             if (err) {
-                console.log(err)
                 return res.render('user/registrar', {
                     error: "no pudimos registrarte"
                 });
             }
-            console.log("asds")
             passport.authenticate('local')(req, res, function() {
                 res.redirect('/');
             });
         });
-    })
+
+
+});
+
+
+
+
 
 
 
