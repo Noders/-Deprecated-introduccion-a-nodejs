@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  .perros
+    div.perro
+      form(method="POST")
+        p
+          h1 Tu nickname:
+          input(type="text" name="username")
+        p
+          h1 Tu Password:
+          input(type="password" name="password")
+        p
+        button(type="submit") Registrame!
+        hr
+        br

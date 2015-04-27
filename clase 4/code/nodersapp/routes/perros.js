@@ -6,7 +6,6 @@ var Perro = mongoose.model('Perro', {
     nombre: String
 });
 
-mongoose.connect('mongodb://localhost/nodersapp_if');
 
 
 /* GET lista de Perros. */
