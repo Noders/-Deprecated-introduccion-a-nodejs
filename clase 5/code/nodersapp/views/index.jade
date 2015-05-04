@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  if(loggedin)
+    p Bienvenido
+  if(!loggedin)
+    a(href="/auth/login") Login
+  if(loggedin)
+    a(href="/auth/logout") Logout

@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+    div.perro
+      h1 Mi perro se llama: #{perro.nombre}
+      p
+        a(href="/perros/#{perro._id}/borrar") Borra Perro
+      hr
+      br

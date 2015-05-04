@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title= title
+    meta(mane='viewport' content="width=device-width, initial-scale=1")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap-theme.min.css')
+  body.container
+    include ./header
+    block content
+    footer
+      script(src='/components/angular/angular.min.js')
+      script(src='/components/jquery/dist/jquery.min.js')
+      script(src='/components/bootstrap/dist/js/bootstrap.min.js')
+      script(src='/private/app.js')
