@@ -19,7 +19,6 @@ router.get('/', function(req, res, next) {
         if (err) {
             console.log(err);
         } else {
-            console.log(perros);
             res.render('perros/lista',
 
                 {

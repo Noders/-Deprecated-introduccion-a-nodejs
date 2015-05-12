@@ -1,0 +1,218 @@
+crear droplet
+configurar DNS basico
+* - IP
+
+npm install express-generator -g
+express nodersapp
+cd nodersapp
+npm install
+nodemon bin/www
+run
+//probar
+repetir y cambiar el puerto
+
+
+/////NGINX 
+sudo apt-get update
+sudo apt-get install nginx
+
+sudo service nginx stop
+sudo service nginx start
+sudo service nginx restart
+sudo update-rc.d nginx defaults
+
+
+server {
+    # ipv4
+    listen 80;
+    server_name test.noders.cl;
+    access_log /var/log/nginx/api.noders.cl.log;
+
+    location / {
+        proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header Host $host;
+                proxy_set_header X-NginX-Proxy true;
+
+                proxy_pass http://127.0.0.1:3002/;
+                proxy_redirect off;
+
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "upgrade";
+    }
+}
+
+server {
+        # ipv4
+        listen 80;
+        server_name blog.noders.cl;
+        access_log /var/log/nginx/blog.noders.cl.log;
+
+        location / {
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header Host $host;
+                proxy_set_header X-NginX-Proxy true;
+
+                proxy_pass http://127.0.0.1:2368/;
+                proxy_redirect off;
+
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "upgrade";
+        }
+}
+
+server {
+    # ipv4
+    listen 80;
+    server_name *.noders.cl;
+        access_log /var/log/nginx/api.noders.cl.log;
+
+        location / {
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header Host $host;
+                proxy_set_header X-NginX-Proxy true;
+crear droplet
+configurar DNS basico
+* - IP
+
+npm install express-generator -g
+express nodersapp
+cd nodersapp
+npm install
+nodemon bin/www
+run
+//probar
+repetir y cambiar el puerto
+
+
+/////NGINX 
+sudo apt-get update
+sudo apt-get install nginx
+
+sudo service nginx stop
+sudo service nginx start
+sudo service nginx restart
+sudo update-rc.d nginx defaults
+
+
+server {
+    # ipv4
+    listen 80;
+    server_name test.noders.cl;
+    access_log /var/log/nginx/api.noders.cl.log;
+
+    location / {
+        proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header Host $host;
+                proxy_set_header X-NginX-Proxy true;
+
+                proxy_pass http://127.0.0.1:3002/;
+                proxy_redirect off;
+
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "upgrade";
+    }
+}
+
+server {
+        # ipv4
+        listen 80;
+        server_name blog.noders.cl;
+        access_log /var/log/nginx/blog.noders.cl.log;
+
+        location / {
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header Host $host;
+                proxy_set_header X-NginX-Proxy true;
+
+                proxy_pass http://127.0.0.1:2368/;
+                proxy_redirect off;
+
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "upgrade";
+        }
+}
+
+server {
+    # ipv4
+    listen 80;
+    server_name *.noders.cl;
+        access_log /var/log/nginx/api.noders.cl.log;
+
+        location / {
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header Host $host;
+                proxy_set_header X-NginX-Proxy true;
+
+                proxy_pass http://127.0.0.1:3001/;
+                proxy_redirect off;
+
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "upgrade";
+        }
+}
+
+server {
+    # ipv4
+    listen 80;
+        server_name noders.cl;
+        access_log /var/log/nginx/api.noders.cl.log;
+
+        location / {
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header Host $host;
+                proxy_set_header X-NginX-Proxy true;
+
+                proxy_pass http://127.0.0.1:3001/;
+                proxy_redirect off;
+
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "upgrade";
+        }
+}
+
+
+
+                proxy_pass http://127.0.0.1:3001/;
+                proxy_redirect off;
+
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "upgrade";
+        }
+}
+
+server {
+    # ipv4
+    listen 80;
+        server_name noders.cl;
+        access_log /var/log/nginx/api.noders.cl.log;
+
+        location / {
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header Host $host;
+                proxy_set_header X-NginX-Proxy true;
+
+                proxy_pass http://127.0.0.1:3001/;
+                proxy_redirect off;
+
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "upgrade";
+        }
+}
+
+

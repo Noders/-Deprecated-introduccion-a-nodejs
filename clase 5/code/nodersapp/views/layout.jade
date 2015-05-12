@@ -6,10 +6,10 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap-theme.min.css')
-  body.container
+  body.container(ng-app='miApp', ng-controller='unController')
     include ./header
     block content
-    footer
+    footer 
       script(src='/components/angular/angular.min.js')
       script(src='/components/jquery/dist/jquery.min.js')
       script(src='/components/bootstrap/dist/js/bootstrap.min.js')
